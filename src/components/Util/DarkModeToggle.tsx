@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-
-const DarkModeToggler = () => {
+const DarkModeToggle = () => {
     const userTheme = localStorage.getItem('theme');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -38,4 +37,4 @@ const DarkModeToggler = () => {
     );
 };
 
-export default DarkModeToggler;
+export default DarkModeToggle;
