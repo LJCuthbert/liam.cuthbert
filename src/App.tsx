@@ -1,9 +1,10 @@
 
 import './App.css'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import HomePage from "./Pages/HomePage.tsx";
+import HomePage from "./pages/HomePage.tsx";
 function App() {
   return (
+
     <div className="App">
         <Router>
             <div>

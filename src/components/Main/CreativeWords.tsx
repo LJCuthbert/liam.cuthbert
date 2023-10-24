@@ -1,29 +1,24 @@
 import { useState, useEffect } from "react";
 import "./CreativeWords.css";
 
-const CreativeHeader: React.FC = () => {
+const CreativeWords: React.FC = () => {
     const words = ['developer', 'programmer', 'designer'];
-    const [currentWordIndex, setCurrentWordIndex] = useState(-1); // Set initial index to -1
+    const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            if (currentWordIndex === -1) {
-                // If it's the first interval, set index to 0 without animation
-                setCurrentWordIndex(0);
-            } else {
-                setCurrentWordIndex((prevIndex) =>
-                    prevIndex === words.length - 1 ? 0 : prevIndex + 1
-                );
-            }
-        }, 6000); // 4 seconds stay + 2 seconds animation time
+            setCurrentWordIndex((prevIndex) =>
+                prevIndex === words.length - 1 ? 0 : prevIndex + 1
+            );
+        }, 6000);
 
         return () => clearInterval(interval);
     }, [currentWordIndex, words]);
 
     return (
-        <span className="text-5xl font-bold">
-            <span>Creative </span>
-            <span className="wordLists">
+        <span className="text-5xl">
+            <span className="uppercase">Creative </span>
+            <span className="uppercase wordLists">
                 {words.map((word, index) => (
                     <b
                         key={index}
@@ -31,8 +26,7 @@ const CreativeHeader: React.FC = () => {
                             index === currentWordIndex
                                 ? 'word-transition-in'
                                 : 'word-transition-out'
-                        }`}
-                    >
+                        }`}>
                         {word}
                     </b>
                 ))}
@@ -41,4 +35,4 @@ const CreativeHeader: React.FC = () => {
     );
 };
 
-export default CreativeHeader;
+export default CreativeWords;
