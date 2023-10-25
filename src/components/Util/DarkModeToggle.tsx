@@ -1,40 +1,28 @@
-import { useEffect } from 'react';
+import { useTheme } from "./ThemeContext.tsx";
+
+
 const DarkModeToggle = () => {
-    const userTheme = localStorage.getItem('theme');
-    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    useEffect(() => {
-        // Check and apply the theme when the component mounts
-        themeCheck();
-    }, [userTheme]);
-
-    const themeCheck = () => {
-        if (userTheme === 'dark' || (!userTheme && systemTheme)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.add('light');
-        }
-    };
-
-    const themeSwitch = () => {
-        if (document.documentElement.classList.contains('dark')) {
-            document.documentElement.classList.remove('dark');
-            document.documentElement.classList.add('light');
-            localStorage.setItem('theme', 'light');
-        } else {
-            document.documentElement.classList.add('dark');
-            document.documentElement.classList.remove('light');
-            localStorage.setItem('theme', 'dark');
-        }
-    };
-
+    const {theme, toggleTheme} = useTheme();
     return (
         <div className="my-auto">
-            <button className="dark:text-gray-200" onClick={themeSwitch}>
-                {document.documentElement.classList.contains('dark') ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-            </button>
+            <label htmlFor="toggle" className="flex items-center cursor-pointer">
+                <div className="relative">
+                    <input
+                        id="toggle"
+                        type="checkbox"
+                        className="hidden"
+                        onChange={toggleTheme}
+                        checked={theme === 'dark'}
+                    />
+                    <div className="toggle__line w-12 h-6 bg-blue-400 rounded-full dark:bg-amber-500 shadow-inner transition-colors duration-500"></div>
+                    <div
+                        className={`toggle__dot absolute w-6 h-6 bg-white rounded-full shadow inset-y-0 left-0 transition-transform duration-300 ease-in-out transform ${theme === 'dark' ? 'translate-x-full' : 'translate-x-0'}` }
+                    ></div>
+                </div>
+            </label>
         </div>
-    );
-};
+    )
+}
 
 export default DarkModeToggle;

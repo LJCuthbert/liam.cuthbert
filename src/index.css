@@ -7,9 +7,20 @@
         --tw-bg-opacity: 1;
         background-color: rgb(3 7 18 / var(--tw-bg-opacity));
         color: rgb(229 231 235 / 1);
-        transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     }
     .light {
-        transition: background-color 0.5s ease-in-out, color 1s ease-in-out;
+        background-color: #f2f2f2;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    }
+    html {
+        scroll-snap-type: y mandatory;
+    }
+    body {
+        overflow-y: scroll;
+        scroll-snap-type: y proximity;
+    }
+    body::-webkit-scrollbar {
+        display: none;
     }
 }
