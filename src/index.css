@@ -23,4 +23,8 @@
     body::-webkit-scrollbar {
         display: none;
     }
+    .bg-gradient-to-b-custom {
+        --tw-gradient-stops: 10%;
+        background-color: linear-gradient(to bottom, var(--tw-gradient-stops));
+    }
 }
