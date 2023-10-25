@@ -6,7 +6,7 @@ import CreativeWords from "../../components/Main/CreativeWords.tsx";
 const AboutMe = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
     return (
-        <div className="flex snap-start transition-colors justify-center items-center flex-col duration-500 gap-12 bg-blue-300 dark:bg-blue-800 min-h-screen">
+        <div className="flex snap-start relative bg-gradient-to-b from-amber-300 dark:from-amber-800 from-10% transition-colors justify-center items-center flex-col duration-500 gap-12 bg-blue-300 dark:bg-blue-800 min-h-screen">
             <div className="container">
                 <div ref={ref} className="text-center">
                     {inView && <TypewriterEffect text="About Me" />}
