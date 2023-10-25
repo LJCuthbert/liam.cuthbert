@@ -1,8 +1,12 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./CreativeWords.css";
 
-const CreativeWords: React.FC = () => {
-    const words = ['developer', 'programmer', 'designer'];
+interface CreativeWordsProps {
+    words: string[];
+    style: string[];
+}
+
+const CreativeWords: React.FC<CreativeWordsProps> = ({ words, style }) => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
     useEffect(() => {
@@ -12,26 +16,29 @@ const CreativeWords: React.FC = () => {
             );
         }, 6000);
 
-        return () => clearInterval(interval);
-    }, [currentWordIndex, words]);
+        return () => {
+            clearInterval(interval);
+            setCurrentWordIndex(0); // Reset the state when the component unmounts
+        };
+    }, [words]);
 
     return (
-        <span className="text-5xl">
-            <span className="uppercase">Creative </span>
-            <span className="uppercase wordLists">
-                {words.map((word, index) => (
-                    <b
-                        key={index}
-                        className={`word ${
-                            index === currentWordIndex
-                                ? 'word-transition-in'
-                                : 'word-transition-out'
-                        }`}>
-                        {word}
-                    </b>
-                ))}
-            </span>
-        </span>
+        <span>
+      <span className="wordLists">
+        {words.map((word, index) => (
+            <b
+                key={index}
+                className={`word ${
+                    index === currentWordIndex
+                        ? 'word-transition-in'
+                        : 'word-transition-out'
+                } ${style.join(" ")}`}
+            >
+                {word}
+            </b>
+        ))}
+      </span>
+    </span>
     );
 };
 
