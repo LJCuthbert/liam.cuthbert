@@ -11,7 +11,7 @@ const Projects = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
 
     return (
-        <div className="min-h-screen relative snap-start flex flex-col bg-amber-300 bg-gradient-to-b dark:from-black from-[#f2f2f2] from-10% dark:bg-amber-800 transition-colors duration-500 justify-center items-center gap-12">
+        <div className="min-h-screen relative snap-start flex flex-col bg-amber-300 bg-gradient-to-b dark:from-gray-950 from-[#f2f2f2] from-10% dark:bg-amber-800 transition-colors duration-500 justify-center items-center gap-12">
             <div className="container">
                 <div ref={ref} className="text-center">
                     {inView && <TypewriterEffect text="Projects" />}
