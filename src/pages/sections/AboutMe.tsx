@@ -26,7 +26,7 @@ const AboutMe = () => {
                         <ul className="list-disc pl-4">
                             <li>JavaScript (Vanilla, React, Node.js, Typescript)</li>
                             <li>HTML, CSS (Bootstrap, Tailwind)</li>
-                            <li>Thymeleaf, Springboot</li>
+                            <li>Java, Thymeleaf, Springboot</li>
                             <li>Database (MySQL)</li>
                         </ul>
                     </Card>
@@ -34,7 +34,7 @@ const AboutMe = () => {
                     {/* Education Card */}
                     <Card title="Education">
                         <p>
-                           Soon to have Bachelor's Degree in Computer Science, University of Cant, [Year of Graduation]
+                           Soon to have Bachelor's Degree in Computer Science, University of Canterbury, 2024
                         </p>
                     </Card>
 
