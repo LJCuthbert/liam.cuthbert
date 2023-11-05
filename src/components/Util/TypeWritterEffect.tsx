@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import "./TypeWritterEffect.css";
 interface TypewriterEffectProps {
     text: string;
     className?: string;
