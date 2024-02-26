@@ -1,63 +1,46 @@
-.wordLists {
-    display: inline-block;
-    position: relative;
-    text-align: left;
-    perspective: 300px;
-}
-
-.wordLists b {
-    display: inline-block;
-    position: absolute;
-    white-space: nowrap;
-    left: 0;
-    top: 0;
-}
-
-
-.word-transition-out {
-    opacity: 0;
-    transform: rotateX(180deg);
-    animation: wordAnimationOut 2s;
-}
-
-b.word-transition-in {
-    position: relative;
-
-}
-.word-transition-in {
-    transform: rotateX(0deg);
-    opacity: 1;
-    animation: wordAnimationIn 2s;
-}
-
-@keyframes wordAnimationOut {
+@keyframes wordCycle {
     0% {
-        opacity: 1;
-        transform: rotateX(0deg);
+        transform: translateY(0);
     }
-    65% {
-        opacity: 0;
+    10% {
+        transform: translateY(0);
     }
-    100% {
-        opacity: 0;
-        transform: rotateX(-90deg);
+    20% {
+        transform: translateY(0);
     }
-}
-
-@keyframes wordAnimationIn {
-    0% {
-        opacity: 0;
-        transform: rotateX(180deg);
+    25% {
+        transform: translateY(-1em);
     }
     35% {
-        opacity: 0;
-        transform: rotateX(120deg);
+        transform: translateY(-1em);
     }
-    65% {
-        opacity: 0;
+    45% {
+        transform: translateY(-1em);
+    }
+    50% {
+        transform: translateY(-2em);
+    }
+    60% {
+        transform: translateY(-2em);
+    }
+    70% {
+        transform: translateY(-2em);
+    }
+    75% {
+        transform: translateY(-3em);
+    }
+    85% {
+        transform: translateY(-3em);
+    }
+    95% {
+        transform: translateY(-3em);
     }
     100% {
-        opacity: 1;
-        transform: rotateX(360deg);
+        transform: translateY(0);
     }
+}
+
+
+.word-cycle {
+    animation: wordCycle 20s infinite; /* Adjust timing as needed */
 }
