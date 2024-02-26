@@ -20,8 +20,9 @@ const HomePage = () => {
             <div className="snap-start">
                 <Contact/>
             </div>
-            <MouseFollower className="w-[0x] h-[0px] duration-200 border-2 border-fuchsia-800 dark:border-fuchsia-200" circleSize={0}/>
-            <MouseFollower className="w-[0px] h-[0px] z-0 bg-fuchsia-800 dark:bg-fuchsia-200" circleSize={0}/>
+
+            <MouseFollower className="hidden md:block duration-75 border-2 border-fuchsia-800 dark:border-fuchsia-200" circleSize={30}/>
+            <MouseFollower className="hidden md:block z-0 bg-fuchsia-800 dark:bg-fuchsia-200" circleSize={4}/>
 
         </div>
     )

@@ -33,6 +33,8 @@ const MouseFollower: React.FC<MouseFollowerProps> = ({ className, circleSize }) 
     const animatedProps = useSpring({
         zIndex: 1000, // Set a higher zIndex value
         transform: `translate(${position.x - circleSize / 2}px, ${position.y - circleSize / 2}px)`,
+        width: `${circleSize}px`,
+        height: `${circleSize}px`,
     });
 
     return (
