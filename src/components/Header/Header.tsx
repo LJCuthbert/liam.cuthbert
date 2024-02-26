@@ -8,7 +8,7 @@ const Header = () => {
     const iconSize = "2x"; // You can adjust the size as needed
 
     return (
-        <header className="sticky top-10 z-50">
+        <header className="sticky top-20 md:top-10 z-50">
             <nav className="flex justify-center gap-2">
                 <a className="" href={linkedInURL} target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} size={iconSize} />
