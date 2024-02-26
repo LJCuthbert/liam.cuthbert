@@ -1,4 +1,3 @@
-
 body {
     overflow-y: auto;
     --tw-scroll-snap-strictness: mandatory;
@@ -11,7 +10,7 @@ body {
 }
 
 .main-header::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 0;
@@ -25,5 +24,3 @@ body {
     width: 100%;
     background-color: #000; /* Change this color as needed */
 }
-
-

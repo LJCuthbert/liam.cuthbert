@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ProjectCardProps {
     projectName: string;
@@ -7,10 +7,16 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ projectName, imageSrc }) => {
     return (
-        <div className="max-w-sm rounded-3xl relative overflow-hidden shadow-2xl dark:shadow-amber-50 dark:shadow-lg">
-            <img className="w-full h-full" src={imageSrc} alt={`Project: ${projectName}`} />
-            <div className="dark:bg-gray-950 absolute bottom-0 w-full z-10 bg-white px-6 py-6">
-                <div className="font-bold text-xl text-center cursor-pointer">{projectName}</div>
+        <div className="relative max-w-sm overflow-hidden rounded-3xl shadow-2xl dark:shadow-lg dark:shadow-amber-50">
+            <img
+                className="h-full w-full"
+                src={imageSrc}
+                alt={`Project: ${projectName}`}
+            />
+            <div className="absolute bottom-0 z-10 w-full bg-white px-6 py-6 dark:bg-gray-950">
+                <div className="cursor-pointer text-center text-xl font-bold">
+                    {projectName}
+                </div>
             </div>
         </div>
     );

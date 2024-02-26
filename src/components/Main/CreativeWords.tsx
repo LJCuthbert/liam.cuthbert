@@ -4,12 +4,16 @@ import React from "react";
 interface CreativeWordsProps {
     words: string[];
     className?: string[];
-    color?: string[]
+    color?: string[];
 }
 
-const CreativeWords: React.FC<CreativeWordsProps> = ({ words , className, color}) => {
+const CreativeWords: React.FC<CreativeWordsProps> = ({
+    words,
+    className,
+    color,
+}) => {
     return (
-        <div className={`${className} overflow-hidden inline-flex flex-col`}>
+        <div className={`${className} inline-flex flex-col overflow-hidden`}>
             {words.map((word, index) => (
                 <b key={index} className={` ${color} 'word-cycle'`}>
                     {word}

@@ -6,14 +6,16 @@
 }
 
 .underline-mid::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     bottom: 0;
     width: 0;
     height: 2px; /* Adjust the height of the underline as needed */
     background-color: black;
-    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out; /* Added transform to the transition */
+    transition:
+        width 0.3s ease-in-out,
+        transform 0.3s ease-in-out; /* Added transform to the transition */
 }
 .dark .underline-mid::after {
     background-color: white;

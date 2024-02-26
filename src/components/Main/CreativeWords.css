@@ -67,7 +67,6 @@
     }
 }
 
-
 .word-cycle-1em {
     animation: wordCycle-1em 20s infinite; /* Adjust timing as needed */
 }
