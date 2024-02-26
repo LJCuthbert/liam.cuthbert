@@ -10,7 +10,7 @@ const Contact = () => {
                 {inView && (
                     <TypewriterEffect
                         text="Contact Me Please"
-                        className={"hover underline-mid"}
+                        className={"hover underline-mid mb-4"}
                     />
                 )}
             </div>

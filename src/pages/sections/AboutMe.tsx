@@ -12,7 +12,7 @@ const AboutMe = () => {
                     {inView && (
                         <TypewriterEffect
                             text="About Me"
-                            className={"hover underline-mid"}
+                            className={"hover underline-mid mb-4"}
                         />
                     )}
                 </div>
@@ -32,7 +32,7 @@ const AboutMe = () => {
                                     "dark:text-blue-700",
                                     "text-blue-400",
                                 ]}
-                            ></CreativeWords>
+                            ></CreativeWords>{" "}
                             based in Christchurch. I love coding, solving
                             problems, and building things that make a
                             difference.
