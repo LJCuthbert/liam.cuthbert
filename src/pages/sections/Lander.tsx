@@ -2,14 +2,14 @@ import CreativeWords from "../../components/Main/CreativeWords.tsx";
 import TypewriterEffect from "../../components/Util/TypeWritterEffect.tsx";
 import { useInView } from "react-intersection-observer";
 
-const Details = () => {
+const Lander = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
 
     return (
-        <div className="relative flex min-h-svh snap-start flex-col items-center justify-evenly sm:min-h-screen">
+        <div className="flex min-h-svh snap-start flex-col items-center justify-evenly sm:min-h-screen">
             <main className="p-4">
-                <div className="details flex flex-col gap-5 text-center">
-                    <h1 className="flex flex-col gap-5 text-7xl font-extrabold uppercase dark:text-gray-300 md:flex-row">
+                <div className="details flex flex-col gap-5 text-center md:text-left">
+                    <h1 className="flex flex-col text-7xl font-extrabold uppercase dark:text-gray-300 md:flex-row md:gap-5">
                         Liam
                         <div ref={ref} className="text-center">
                             {inView && (
@@ -44,4 +44,4 @@ const Details = () => {
     );
 };
 
-export default Details;
+export default Lander;

@@ -1,4 +1,5 @@
 import React from "react";
+import "./ProjectCard.css";
 
 interface ProjectCardProps {
     projectName: string;
@@ -7,14 +8,14 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ projectName, imageSrc }) => {
     return (
-        <div className="relative max-w-sm overflow-hidden rounded-3xl shadow-2xl dark:shadow-lg dark:shadow-amber-50">
+        <div className="grid w-48 cursor-pointer grid-cols-1 rounded-md bg-gray-100 shadow-md dark:bg-black dark:shadow-amber-100 sm:w-64 sm:rounded-xl">
             <img
-                className="h-full w-full"
+                className="h-48 w-48 rounded-md rounded-b-none object-cover sm:h-64 sm:w-64 sm:rounded-xl"
                 src={imageSrc}
                 alt={`Project: ${projectName}`}
             />
-            <div className="absolute bottom-0 z-10 w-full bg-white px-6 py-6 dark:bg-gray-950">
-                <div className="cursor-pointer text-center text-xl font-bold">
+            <div className="my-2 p-2">
+                <div className="text-center text-xl font-bold">
                     {projectName}
                 </div>
             </div>

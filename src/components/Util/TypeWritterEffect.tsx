@@ -22,11 +22,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
         return () => clearInterval(intervalId);
     }, [index, text]);
 
-    return (
-        <h2 className={`mb-4 text-7xl font-bold ${className}`}>
-            {displayText}
-        </h2>
-    );
+    return <h2 className={`text-7xl font-bold ${className}`}>{displayText}</h2>;
 };
 
 export default TypewriterEffect;

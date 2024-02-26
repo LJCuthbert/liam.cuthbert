@@ -1,14 +1,15 @@
 import Projects from "./sections/Projects.tsx";
 import AboutMe from "./sections/AboutMe.tsx";
-import Details from "./sections/Details.tsx";
+import Lander from "./sections/Lander.tsx";
 import Contact from "./sections/Contact.tsx";
 import Header from "../components/Header/Header.tsx";
 import MouseFollower from "../components/Util/MouseFollower.tsx";
+
 const HomePage = () => {
     return (
         <div className="dark:bg-gray-90 relative mx-auto dark:bg-gradient-to-b">
             <Header />
-            <Details />
+            <Lander />
             <Projects />
             <AboutMe />
             <Contact />
