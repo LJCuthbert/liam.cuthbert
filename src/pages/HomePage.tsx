@@ -8,18 +8,10 @@ const HomePage = () => {
     return (
         <div className="dark:bg-gray-90 relative dark:bg-gradient-to-b mx-auto">
             <Header/>
-            <div className="snap-start">
-                <Details/>
-            </div>
-            <div className="snap-start">
-                <Projects/>
-            </div>
-            <div className="snap-start">
-                <AboutMe/>
-            </div>
-            <div className="snap-start">
-                <Contact/>
-            </div>
+            <Details/>
+            <Projects/>
+            <AboutMe/>
+            <Contact/>
 
             <MouseFollower className="hidden md:block duration-75 border-2 border-fuchsia-800 dark:border-fuchsia-200" circleSize={30}/>
             <MouseFollower className="hidden md:block z-0 bg-fuchsia-800 dark:bg-fuchsia-200" circleSize={4}/>

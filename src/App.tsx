@@ -9,11 +9,11 @@ function App() {
     <ThemeProvider>
         <div className="App">
             <Router>
-                <div>
+                <>
                     <Routes>
                         <Route path="/" element={<HomePage/>}/>
                     </Routes>
-                </div>
+                </>
             </Router>
         </div>
     </ThemeProvider>
