@@ -11,7 +11,7 @@ const Projects = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
 
     return (
-        <div className="relative flex min-h-screen snap-start flex-col items-center justify-center gap-12 bg-amber-300 bg-gradient-to-b from-[#f2f2f2] from-10% transition-colors duration-500 dark:bg-amber-800 dark:from-gray-950">
+        <div className="relative flex min-h-svh snap-start flex-col items-center justify-center gap-12 bg-amber-300 bg-gradient-to-b from-[#f2f2f2] from-10% transition-colors duration-500 dark:bg-amber-800 dark:from-gray-950 sm:min-h-screen">
             <div className="container">
                 <div ref={ref} className="text-center">
                     {inView && (

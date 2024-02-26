@@ -6,7 +6,7 @@ const Details = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
 
     return (
-        <div className="relative flex min-h-screen snap-start flex-col items-center justify-evenly">
+        <div className="relative flex min-h-svh snap-start flex-col items-center justify-evenly sm:min-h-screen">
             <main className="p-4">
                 <div className="details flex flex-col gap-5 text-center">
                     <h1 className="flex flex-col gap-5 text-7xl font-extrabold uppercase dark:text-gray-300 md:flex-row">
