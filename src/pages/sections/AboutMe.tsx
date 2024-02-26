@@ -14,8 +14,8 @@ const AboutMe = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Personal Information Card */}
                     <Card title="Personal Information">
-                        <p>
-                            Hi! I'm Liam , a passionate <CreativeWords words={['Computer Scientist', 'Frontend Developer']} style={['text-normal', 'font-bold', 'dark:text-blue-700', 'text-blue-400']}></CreativeWords> based in
+                        <p className="inline">
+                            Hi! I'm Liam , a passionate <CreativeWords words={['Computer Scientist', 'Frontend Developer']} className={["h-[1.5em]"]} color={['word-cycle-15em text', 'dark:text-blue-700', 'text-blue-400']}></CreativeWords> based in
                             Christchurch. I love coding, solving problems, and building things that make a difference.
                         </p>
                         {/* Add more personal information as needed */}

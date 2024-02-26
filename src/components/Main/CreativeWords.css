@@ -1,4 +1,4 @@
-@keyframes wordCycle {
+@keyframes wordCycle-1em {
     0% {
         transform: translateY(0);
     }
@@ -40,7 +40,38 @@
     }
 }
 
+@keyframes wordCycle-15em {
+    0% {
+        transform: translateY(0);
+    }
+    10% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-1.5em);
+    }
+    75% {
+        transform: translateY(-1.5em);
+    }
+    85% {
+        transform: translateY(-1.5em);
+    }
+    95% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
-.word-cycle {
-    animation: wordCycle 20s infinite; /* Adjust timing as needed */
+
+.word-cycle-1em {
+    animation: wordCycle-1em 20s infinite; /* Adjust timing as needed */
+}
+
+.word-cycle-15em {
+    animation: wordCycle-15em 20s infinite; /* Adjust timing as needed */
 }

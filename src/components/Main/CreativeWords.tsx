@@ -3,13 +3,15 @@ import React from "react";
 
 interface CreativeWordsProps {
     words: string[];
+    className?: string[];
+    color?: string[]
 }
 
-const CreativeWords: React.FC<CreativeWordsProps> = ({ words }) => {
+const CreativeWords: React.FC<CreativeWordsProps> = ({ words , className, color}) => {
     return (
-        <div className="h-[1em] overflow-hidden flex flex-col">
+        <div className={`${className} overflow-hidden inline-flex flex-col`}>
             {words.map((word, index) => (
-                <b key={index} className="text-black dark:text-gray-300 word-cycle">
+                <b key={index} className={` ${color} 'word-cycle'`}>
                     {word}
                 </b>
             ))}
