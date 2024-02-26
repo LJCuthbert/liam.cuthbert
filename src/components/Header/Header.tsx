@@ -1,18 +1,18 @@
 // Header.js
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-    faLinkedin,
-    faInstagram,
     faGithub,
+    faInstagram,
+    faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
-import { linkedInURL, githubURL, instagramURL } from "./Links.tsx";
+import { githubURL, instagramURL, linkedInURL } from "./Links.tsx";
 import DarkModeToggle from "../Util/DarkModeToggle.tsx";
 
 const Header = () => {
     const iconSize = "2x"; // You can adjust the size as needed
 
     return (
-        <header className="sticky top-20 z-50 md:top-10">
+        <header className="sticky top-[2svh] z-50 sm:top-10">
             <nav className="flex justify-center gap-2">
                 <a
                     className=""
