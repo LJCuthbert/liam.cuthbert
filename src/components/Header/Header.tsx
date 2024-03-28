@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <header className="sticky top-10 z-50">
-            <nav className="flex justify-center gap-2">
+            <nav className="flex px-6 lg:justify-center lg:flex-row flex-col gap-2">
                 <a className="" href={linkedInURL} target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} size={iconSize} />
                 </a>

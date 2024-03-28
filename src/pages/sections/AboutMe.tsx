@@ -14,21 +14,54 @@ const AboutMe = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Personal Information Card */}
                     <Card title="Personal Information">
-                        <p>
-                            Hi! I'm Liam , a passionate <CreativeWords words={['Computer Scientist', 'Frontend Developer']} style={['text-normal', 'font-bold', 'dark:text-blue-700', 'text-blue-400']}></CreativeWords> based in
-                            Christchurch. I love coding, solving problems, and building things that make a difference.
-                        </p>
-                        {/* Add more personal information as needed */}
+                        <div className="flex flex-col gap-8">
+                            <p>
+                                Hi! I'm Liam, a passionate <CreativeWords words={['Computer Scientist', 'Frontend Developer']} style={['text-normal', 'font-bold', 'dark:text-blue-700', 'text-blue-400']}></CreativeWords> based in
+                                Christchurch. I love coding, solving problems, and building things that make a difference.
+                            </p>
+                            <p>
+
+                            </p>
+                        </div>
+
                     </Card>
 
                     {/* Skills Card */}
-                    <Card title="Skills">
-                        <ul className="list-disc pl-4">
-                            <li>JavaScript (Vanilla, React, Node.js, Typescript)</li>
-                            <li>HTML, CSS (Bootstrap, Tailwind)</li>
-                            <li>Java, Thymeleaf, Springboot</li>
-                            <li>Database (MySQL)</li>
-                        </ul>
+                    <Card title="Programming Languages">
+                        <div className="flex gap-16 max-sm:gap-0 flex-wrap">
+                            <div className="flex justify-between flex-col gap-2">
+                                <div>
+                                    <h2 className="text-xl font-bold mb-1.5">Web Development</h2>
+                                    <ul className="list-disc pl-4">
+                                        <li>HTML, CSS (Bootstrap, Tailwind)</li>
+                                        <li>JavaScript (Vanilla, React, Typescript)</li>
+                                        <li>Thymeleaf</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h2 className="text-xl font-bold mb-1.5">Object Oriented</h2>
+                                    <ul className="list-disc pl-4">
+                                        <li>Java (Springboot)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="flex justify-between flex-col gap-2">
+                                <div>
+                                    <h2 className="text-xl font-bold mb-1.5">Database</h2>
+                                    <ul className="list-disc pl-4">
+                                        <li>MySql</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h2 className="text-xl font-bold mb-1.5">Other</h2>
+                                    <ul className="list-disc pl-4">
+                                        <li>Python</li>
+                                        <li>C</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </Card>
 
                     {/* Education Card */}

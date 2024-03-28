@@ -18,6 +18,10 @@ interface Position {
 const MouseFollower: React.FC<MouseFollowerProps> = ({ className, circleSize }) => {
     const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
 
+    const style = {
+        cursor: 'none', // Hide the cursor
+    };
+
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
             setPosition({ x: e.clientX, y: e.clientY });
@@ -40,6 +44,7 @@ const MouseFollower: React.FC<MouseFollowerProps> = ({ className, circleSize }) 
             className={`fixed top-0 left-0 visible rounded-full pointer-events-none ${className}`}
             style={{
                 ...animatedProps,
+                ...style,
             }}
         >
         </animated.div>

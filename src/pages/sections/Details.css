@@ -1,0 +1,12 @@
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* or other appropriate value based on your design */
+    width: 100%;
+    max-width: 1200px; /* or other appropriate value based on your design */
+    margin: 0 auto; /* center the container */
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+.flex-container::-webkit-scrollbar {
+    display: none;
+}
