@@ -1,0 +1,23 @@
+/* UnderlineEffect.css */
+
+.underline-container {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-effect::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Adjust the height of the underline as needed */
+    transition:
+            width 0.3s ease-in-out,
+            transform 0.3s ease-in-out; /* Added transform to the transition */
+}
+
+.underline-container:hover .underline-effect::after {
+    width: 100%;
+    transform: translateX(-50%);
+}

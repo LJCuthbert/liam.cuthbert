@@ -1,9 +1,14 @@
-import Card from "../../components/Util/Card.tsx";
-import TypewriterEffect from "../../components/Util/TypeWritterEffect.tsx";
+import { Card } from "../../components/Util/Card.tsx";
 import { useInView } from "react-intersection-observer";
 import CreativeWords from "../../components/Main/CreativeWords.tsx";
 import { useState } from "react";
 import { Carousel } from "flowbite-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+    TypeWriterEffect,
+    UnderlineEffect,
+} from "../../components/Effects/TextEffects.tsx";
 
 const AboutMe = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
@@ -17,10 +22,12 @@ const AboutMe = () => {
             <div className="container">
                 <div ref={ref} className="text-center">
                     {inView && (
-                        <TypewriterEffect
-                            text="About Me"
-                            className={"hover underline-mid mb-4"}
-                        />
+                        <UnderlineEffect color={"after:bg-black dark:bg-white"}>
+                            <TypeWriterEffect
+                                text="About Me"
+                                className={"hover underline-mid mb-4"}
+                            />
+                        </UnderlineEffect>
                     )}
                 </div>
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
@@ -28,12 +35,22 @@ const AboutMe = () => {
                         <Carousel
                             slideInterval={5000}
                             slide={false}
-                            className="min-h-[6em] w-full"
+                            className="h-64 w-full sm:h-96 sm:w-full md:h-96 md:w-full lg:h-96 lg:w-full xl:h-96 xl:w-full 2xl:h-96 2xl:w-full"
+                            leftControl={
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-400 bg-gray-500 text-white hover:border-gray-500 hover:bg-gray-400 dark:border-gray-300 dark:bg-gray-200 dark:text-black dark:hover:border-gray-200 dark:hover:bg-gray-300">
+                                    <FontAwesomeIcon icon={faArrowLeft} />
+                                </div>
+                            }
+                            rightControl={
+                                <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-400 bg-gray-500 text-white hover:border-gray-500 hover:bg-gray-400 dark:border-gray-300 dark:bg-gray-200 dark:text-black dark:hover:border-gray-200 dark:hover:bg-gray-300">
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </div>
+                            }
                         >
                             {/* Personal Information Card */}
                             <Card
                                 title="Personal Information"
-                                className={"h-full w-full"}
+                                className="h-full w-full"
                             >
                                 <div className="md:inline-block">
                                     Hi! I'm Liam , a passionate{" "}
@@ -43,17 +60,14 @@ const AboutMe = () => {
                                             "Frontend Developer",
                                         ]}
                                         className={["h-[1.5em]"]}
-                                        color={[
-                                            "word-cycle-15em text",
-                                            "dark:text-blue-700",
-                                            "text-blue-400",
-                                        ]}
+                                        color={
+                                            "word-cycle-15em dark:text-blue-700 text-blue-400"
+                                        }
                                     ></CreativeWords>{" "}
                                     based in Christchurch. I love coding,
                                     solving problems, and building things that
                                     make a difference.
                                 </div>
-                                {/* Add more personal information as needed */}
                             </Card>
                             {/* Skills Card */}
                             <Card title="Skills" className={"h-full w-full"}>
@@ -97,11 +111,9 @@ const AboutMe = () => {
                                             "Frontend Developer",
                                         ]}
                                         className={["h-[1.5em]"]}
-                                        color={[
-                                            "word-cycle-15em text",
-                                            "dark:text-blue-700",
-                                            "text-blue-400",
-                                        ]}
+                                        color={
+                                            "word-cycle-15em dark:text-blue-700 text-blue-400"
+                                        }
                                     ></CreativeWords>{" "}
                                     based in Christchurch. I love coding,
                                     solving problems, and building things that

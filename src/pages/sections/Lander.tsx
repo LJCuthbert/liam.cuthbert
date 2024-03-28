@@ -1,6 +1,11 @@
 import CreativeWords from "../../components/Main/CreativeWords.tsx";
-import TypewriterEffect from "../../components/Util/TypeWritterEffect.tsx";
 import { useInView } from "react-intersection-observer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import {
+    TypeWriterEffect,
+    UnderlineEffect,
+} from "../../components/Effects/TextEffects.tsx";
 
 const Lander = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
@@ -13,7 +18,7 @@ const Lander = () => {
                         Liam
                         <div ref={ref} className="text-center">
                             {inView && (
-                                <TypewriterEffect
+                                <TypeWriterEffect
                                     text="Cuthbert"
                                     className={
                                         "font-normal text-rose-300 dark:text-rose-700"
@@ -32,14 +37,25 @@ const Lander = () => {
                                 "person",
                             ]}
                             className={["h-[1em]"]}
-                            color={[
-                                "word-cycle-1em",
-                                "text-black dark:text-gray-300",
-                            ]}
+                            color={
+                                "word-cycle-1em text-black dark:text-gray-300"
+                            }
                         />
                     </span>
                 </div>
             </main>
+            <footer className="hover underline-mid">
+                <UnderlineEffect color={"after:bg-rose-300 dark:bg-rose-700"}>
+                    <a
+                        href="/Resume.pdf"
+                        className=" flex items-center gap-2 rounded-md p-2 text-rose-300 dark:text-rose-700"
+                        download
+                    >
+                        <h1 className={"text-xl"}>Download My CV</h1>
+                        <FontAwesomeIcon icon={faDownload} />
+                    </a>
+                </UnderlineEffect>
+            </footer>
         </div>
     );
 };
