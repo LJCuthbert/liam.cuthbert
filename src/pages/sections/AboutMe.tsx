@@ -22,7 +22,9 @@ const AboutMe = () => {
             <div className="container">
                 <div ref={ref} className="mb-6 text-center">
                     {inView && (
-                        <UnderlineEffect color={"after:bg-black dark:bg-white"}>
+                        <UnderlineEffect
+                            color={"after:bg-black after:dark:bg-white"}
+                        >
                             <TypeWriterEffect text="About Me" />
                         </UnderlineEffect>
                     )}

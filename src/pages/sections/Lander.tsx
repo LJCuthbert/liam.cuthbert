@@ -45,7 +45,9 @@ const Lander = () => {
                 </div>
             </main>
             <footer className="hover underline-mid">
-                <UnderlineEffect color={"after:bg-rose-300 dark:bg-rose-700"}>
+                <UnderlineEffect
+                    color={"after:bg-rose-300 after:dark:bg-rose-700"}
+                >
                     <a
                         href="/Resume.pdf"
                         className=" flex items-center gap-2 rounded-md p-2 text-rose-300 dark:text-rose-700"
