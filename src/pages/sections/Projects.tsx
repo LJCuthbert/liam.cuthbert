@@ -4,7 +4,10 @@ import ProjectCard from "../../components/Util/ProjectCard.tsx";
 import ConQuestDark from "../../assets/ConQuestDark.png";
 import ConQuestLight from "../../assets/ConQuestLight.png";
 import UCFK from "../../assets/UCFK.jpg";
-import TypewriterEffect from "../../components/Util/TypeWritterEffect.tsx";
+import {
+    TypeWriterEffect,
+    UnderlineEffect,
+} from "../../components/Effects/TextEffects.tsx";
 
 const Projects = () => {
     const { theme } = useTheme();
@@ -15,10 +18,9 @@ const Projects = () => {
             <div className="container">
                 <div ref={ref} className="mb-6 text-center">
                     {inView && (
-                        <TypewriterEffect
-                            text="Projects"
-                            className={"hover underline-mid"}
-                        />
+                        <UnderlineEffect color="after:bg-black dark:after:bg-white">
+                            <TypeWriterEffect text="Projects" />
+                        </UnderlineEffect>
                     )}
                 </div>
                 <div className="flex flex-wrap justify-center gap-4">

@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
-import "./TypeWritterEffect.css";
+import React, { ReactElement, useEffect, useState } from "react";
+
+import "./UnderlineEffect.css"; // Import your CSS file for styling
+
+interface UnderlineEffectProps {
+    children: ReactElement;
+    color?: string;
+}
 
 interface TypewriterEffectProps {
     text: string;
     className?: string;
 }
 
-const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
+const TypeWriterEffect: React.FC<TypewriterEffectProps> = ({
     text,
     className,
 }) => {
@@ -25,4 +31,13 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
     return <h2 className={`text-7xl font-bold ${className}`}>{displayText}</h2>;
 };
 
-export default TypewriterEffect;
+const UnderlineEffect: React.FC<UnderlineEffectProps> = ({
+    children,
+    color,
+}) => (
+    <div className="underline-container">
+        <div className={`underline-effect ${color}`}>{children}</div>
+    </div>
+);
+
+export { TypeWriterEffect, UnderlineEffect };
