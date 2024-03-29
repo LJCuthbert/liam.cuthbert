@@ -3,7 +3,7 @@ import AboutMe from "./sections/AboutMe.tsx";
 import Lander from "./sections/Lander.tsx";
 import Contact from "./sections/Contact.tsx";
 import Header from "../components/Header/Header.tsx";
-import MouseFollower from "../components/Util/MouseFollower.tsx";
+import MouseFollower from "../components/Effects/MouseFollower.tsx";
 
 const HomePage = () => {
     return (

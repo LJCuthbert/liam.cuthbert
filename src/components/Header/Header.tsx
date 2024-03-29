@@ -6,7 +6,7 @@ import {
     faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { githubURL, instagramURL, linkedInURL } from "./Links.tsx";
-import DarkModeToggle from "../Util/DarkModeToggle.tsx";
+import DarkModeToggle from "../Theme/DarkModeToggle.tsx";
 
 const Header = () => {
     const iconSize = "2x"; // You can adjust the size as needed

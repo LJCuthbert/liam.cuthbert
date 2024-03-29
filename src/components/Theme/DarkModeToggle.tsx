@@ -1,9 +1,7 @@
 import { useTheme } from "./ThemeContext.tsx";
 
-
 const DarkModeToggle = () => {
-
-    const {theme, toggleTheme} = useTheme();
+    const { theme, toggleTheme } = useTheme();
     return (
         <div className="my-auto">
             <label
@@ -26,6 +24,6 @@ const DarkModeToggle = () => {
             </label>
         </div>
     );
-}
+};
 
 export default DarkModeToggle;

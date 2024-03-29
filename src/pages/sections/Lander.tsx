@@ -1,4 +1,4 @@
-import CreativeWords from "../../components/Main/CreativeWords.tsx";
+import CreativeWords from "../../components/Effects/CreativeWords.tsx";
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";

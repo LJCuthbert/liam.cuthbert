@@ -1,6 +1,6 @@
 import { Card } from "../../components/Util/Card.tsx";
 import { useInView } from "react-intersection-observer";
-import CreativeWords from "../../components/Main/CreativeWords.tsx";
+import CreativeWords from "../../components/Effects/CreativeWords.tsx";
 import { useState } from "react";
 import { Carousel } from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
