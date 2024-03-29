@@ -3,30 +3,31 @@
 @tailwind utilities;
 
 @layer base {
+
     .dark {
-        --tw-bg-opacity: 1;
-        background-color: rgb(3 7 18 / var(--tw-bg-opacity));
-        color: rgb(229 231 235 / 1);
-        transition:
-            background-color 0.5s ease-in-out,
-            color 0.5s ease-in-out;
+        background-color: #000;
+        color: #fff;
     }
+
     .light {
-        background-color: #f2f2f2;
-        transition:
-            background-color 0.5s ease-in-out,
-            color 0.5s ease-in-out;
+        background-color: #fff;
+        color: #000;
     }
+
     html {
         scroll-snap-type: y mandatory;
     }
+
     body {
         overflow-y: scroll;
         scroll-snap-type: y proximity;
+        @apply transition-colors duration-1000;
     }
+
     body::-webkit-scrollbar {
         display: none;
     }
+
     .bg-gradient-to-b-custom {
         --tw-gradient-stops: 10%;
         background-color: linear-gradient(to bottom, var(--tw-gradient-stops));

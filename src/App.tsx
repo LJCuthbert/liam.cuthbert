@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage.tsx";
 import { ThemeProvider } from "./components/Theme/ThemeContext.tsx";
+import ConQuestPage from "./pages/projects/ConQuestPage.tsx";
 
 function App() {
     return (
@@ -11,6 +12,10 @@ function App() {
                     <>
                         <Routes>
                             <Route path="/" element={<HomePage />} />
+                            <Route
+                                path="/projects/conquest"
+                                element={<ConQuestPage />}
+                            />
                         </Routes>
                     </>
                 </Router>

@@ -14,16 +14,16 @@ const Projects = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
 
     return (
-        <div className="flex min-h-svh snap-start items-center justify-center gap-12 bg-amber-300 bg-gradient-to-b from-[#f2f2f2] from-10% transition-colors dark:bg-amber-800 dark:from-gray-950 sm:min-h-screen">
+        <div className="flex min-h-svh snap-start flex-col items-center justify-center gap-12 bg-amber-300 bg-gradient-to-b from-[#f2f2f2] from-10% transition-colors dark:bg-amber-800 dark:from-gray-950 sm:min-h-screen">
+            <div ref={ref} className="mb-6 text-center">
+                {inView && (
+                    <UnderlineEffect color="after:bg-black dark:after:bg-white">
+                        <TypeWriterEffect text="Projects" />
+                    </UnderlineEffect>
+                )}
+            </div>
             <div className="container">
-                <div ref={ref} className="mb-6 text-center">
-                    {inView && (
-                        <UnderlineEffect color="after:bg-black dark:after:bg-white">
-                            <TypeWriterEffect text="Projects" />
-                        </UnderlineEffect>
-                    )}
-                </div>
-                <div className="flex flex-wrap justify-center gap-4">
+                <div className="flex flex-col justify-evenly gap-5 max-sm:items-center sm:flex-row sm:gap-0">
                     <ProjectCard
                         projectName="Embedded System: Battleships"
                         imageSrc={UCFK}
@@ -33,6 +33,7 @@ const Projects = () => {
                         imageSrc={
                             theme === "dark" ? ConQuestDark : ConQuestLight
                         }
+                        link="/projects/conquest"
                     />
                 </div>
             </div>
