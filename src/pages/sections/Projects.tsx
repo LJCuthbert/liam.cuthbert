@@ -22,20 +22,16 @@ const Projects = () => {
                     </UnderlineEffect>
                 )}
             </div>
-            <div className="container">
-                <div className="flex flex-col justify-evenly gap-5 max-sm:items-center sm:flex-row sm:gap-0">
-                    <ProjectCard
-                        projectName="Embedded System: Battleships"
-                        imageSrc={UCFK}
-                    />
-                    <ProjectCard
-                        projectName="ConQuest"
-                        imageSrc={
-                            theme === "dark" ? ConQuestDark : ConQuestLight
-                        }
-                        link="/projects/conquest"
-                    />
-                </div>
+            <div className="grid w-[80%] grid-cols-2 place-items-center">
+                <ProjectCard
+                    projectName="Embedded System: Battleships"
+                    imageSrc={UCFK}
+                />
+                <ProjectCard
+                    projectName="ConQuest"
+                    imageSrc={theme === "dark" ? ConQuestDark : ConQuestLight}
+                    link="/projects/conquest"
+                />
             </div>
         </div>
     );

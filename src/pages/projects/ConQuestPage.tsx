@@ -1,11 +1,6 @@
-import Header from "../../components/header/Header.tsx";
-import MouseFollower from "../../components/effects/MouseFollower.tsx";
-
 const ConQuestPage = () => {
     return (
-        <div className="relative mx-auto bg-gradient-to-b from-emerald-200 to-white dark:from-emerald-600 dark:to-black">
-            <Header />
-
+        <div className="mx-auto bg-gradient-to-b from-emerald-200 to-white dark:from-emerald-800 dark:to-black">
             <main className="flex min-h-svh snap-start flex-col items-center justify-center gap-8 p-4 sm:min-h-screen">
                 <h1 className="text-7xl font-extrabold uppercase dark:text-gray-300">
                     ConQuest
@@ -41,15 +36,6 @@ const ConQuestPage = () => {
                     </div>
                 </div>
             </main>
-
-            <MouseFollower
-                className="hidden border-2 border-fuchsia-800 duration-75 dark:border-fuchsia-200 md:block"
-                circleSize={30}
-            />
-            <MouseFollower
-                className="z-0 hidden bg-fuchsia-800 dark:bg-fuchsia-200 md:block"
-                circleSize={4}
-            />
         </div>
     );
 };

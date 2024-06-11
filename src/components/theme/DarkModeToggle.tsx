@@ -4,10 +4,7 @@ const DarkModeToggle = () => {
     const { theme, toggleTheme } = useTheme();
     return (
         <div className="my-auto">
-            <label
-                htmlFor="toggle"
-                className="flex cursor-pointer items-center"
-            >
+            <label htmlFor="toggle" className="flex items-center">
                 <div className="relative">
                     <input
                         id="toggle"

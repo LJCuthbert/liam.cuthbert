@@ -11,7 +11,7 @@ const Lander = () => {
     const [ref, inView] = useInView({ triggerOnce: false });
 
     return (
-        <div className="flex min-h-svh snap-start flex-col items-center justify-evenly sm:min-h-screen">
+        <div className="flex min-h-svh snap-start flex-col items-center justify-evenly dark:bg-gray-950 sm:min-h-screen">
             <main className="p-4">
                 <div className="details flex flex-col gap-5 text-center md:text-left">
                     <h1 className="flex flex-col text-7xl font-extrabold uppercase dark:text-gray-300 md:flex-row md:gap-5">
@@ -44,13 +44,11 @@ const Lander = () => {
                     </span>
                 </div>
             </main>
-            <footer className="hover underline-mid">
-                <UnderlineEffect
-                    color={"after:bg-rose-300 after:dark:bg-rose-700"}
-                >
+            <footer className="hover underline-mid text-rose-300 hover:text-rose-500 dark:text-rose-700">
+                <UnderlineEffect color={"after:bg-rose-500"}>
                     <a
                         href="/Resume.pdf"
-                        className=" flex items-center gap-2 rounded-md p-2 text-rose-300 dark:text-rose-700"
+                        className=" flex items-center gap-2 rounded-md p-2"
                         download
                     >
                         <h1 className={"text-xl"}>Download My CV</h1>

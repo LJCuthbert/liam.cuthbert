@@ -19,17 +19,16 @@
     }
 
     body {
+
         overflow-y: scroll;
-        scroll-snap-type: y proximity;
+        scroll-snap-type: y mandatory;
         @apply transition-colors duration-1000;
     }
 
     body::-webkit-scrollbar {
         display: none;
     }
-
-    .bg-gradient-to-b-custom {
-        --tw-gradient-stops: 10%;
-        background-color: linear-gradient(to bottom, var(--tw-gradient-stops));
+    * {
+        cursor: none;
     }
 }

@@ -3,6 +3,7 @@ body {
     --tw-scroll-snap-strictness: mandatory;
     scroll-snap-type: y var(--tw-scroll-snap-strictness);
 }
+
 .main-header {
     display: inline-block;
     position: relative;
