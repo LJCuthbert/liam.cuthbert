@@ -1,11 +1,11 @@
-import CreativeWords from "../../components/Effects/CreativeWords.tsx";
+import CreativeWords from "../../components/effects/CreativeWords.tsx";
 import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import {
     TypeWriterEffect,
     UnderlineEffect,
-} from "../../components/Effects/TextEffects.tsx";
+} from "../../components/effects/TextEffects.tsx";
 
 const Lander = () => {
     const [ref, inView] = useInView({ triggerOnce: false });

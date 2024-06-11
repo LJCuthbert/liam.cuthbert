@@ -2,8 +2,8 @@ import { useInView } from "react-intersection-observer";
 import {
     TypeWriterEffect,
     UnderlineEffect,
-} from "../../components/Effects/TextEffects.tsx";
-import { githubURL, linkedInURL } from "../../components/Header/Links.tsx";
+} from "../../components/effects/TextEffects.tsx";
+import { githubURL, linkedInURL } from "../../components/header/Links.tsx";
 
 const Contact = () => {
     const [ref, inView] = useInView({ triggerOnce: false });

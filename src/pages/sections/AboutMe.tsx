@@ -1,6 +1,6 @@
-import { Card } from "../../components/Util/Card.tsx";
+import { Card } from "../../components/util/Card.tsx";
 import { useInView } from "react-intersection-observer";
-import CreativeWords from "../../components/Effects/CreativeWords.tsx";
+import CreativeWords from "../../components/effects/CreativeWords.tsx";
 import { useState } from "react";
 import { Carousel } from "flowbite-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,7 @@ import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import {
     TypeWriterEffect,
     UnderlineEffect,
-} from "../../components/Effects/TextEffects.tsx";
+} from "../../components/effects/TextEffects.tsx";
 
 const AboutMe = () => {
     const [ref, inView] = useInView({ triggerOnce: false });

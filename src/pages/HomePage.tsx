@@ -2,8 +2,8 @@ import Projects from "./sections/Projects.tsx";
 import AboutMe from "./sections/AboutMe.tsx";
 import Lander from "./sections/Lander.tsx";
 import Contact from "./sections/Contact.tsx";
-import Header from "../components/Header/Header.tsx";
-import MouseFollower from "../components/Effects/MouseFollower.tsx";
+import Header from "../components/header/Header.tsx";
+import MouseFollower from "../components/effects/MouseFollower.tsx";
 
 const HomePage = () => {
     return (

@@ -1,13 +1,13 @@
-import { useTheme } from "../../components/Theme/ThemeContext.tsx";
+import { useTheme } from "../../components/theme/ThemeContext.tsx";
 import { useInView } from "react-intersection-observer";
-import ProjectCard from "../../components/Util/ProjectCard.tsx";
+import ProjectCard from "../../components/util/ProjectCard.tsx";
 import ConQuestDark from "../../assets/ConQuestDark.png";
 import ConQuestLight from "../../assets/ConQuestLight.png";
 import UCFK from "../../assets/UCFK.jpg";
 import {
     TypeWriterEffect,
     UnderlineEffect,
-} from "../../components/Effects/TextEffects.tsx";
+} from "../../components/effects/TextEffects.tsx";
 
 const Projects = () => {
     const { theme } = useTheme();
