@@ -1,3 +1,13 @@
+.cursor-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+}
+
 .cursor {
     position: fixed;
     top: 0;
@@ -7,4 +17,5 @@
     mix-blend-mode: difference;
     pointer-events: none;
     z-index: 9999;
+    transition: width 0.1s ease, height 0.1s ease;
 }
