@@ -1,116 +1,79 @@
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+import React, { useEffect, useState } from "react";
+import { observer, useLocalObservable } from "mobx-react-lite";
+import getStroke from "perfect-freehand";
+import { getSvgPathFromStroke } from "../util/helper";
 import "./CustomCursor.css";
 
-const SVGNS = "http://www.w3.org/2000/svg";
-const config = { lines: 25 };
+const TRAIL_SIZE = 32;
+const SHRINK_RATE = 0.1;
 
-const CustomCursor = () => {
-  const defaultSize = 15;
-  const enlargedSize = 30; // Size when hovering over text
-  const [position, setPosition] = useState({
-    x: window.innerWidth * 0.5,
-    y: window.innerHeight * 0.5,
-  });
-  const [currSize, setCurrSize] = useState(defaultSize);
+interface Point {
+  x: number;
+  y: number;
+}
 
-  const svgRef = useRef<SVGSVGElement | null>(null);
-  const circleRef = useRef<SVGCircleElement | null>(null);
-  const _ease = 0.8;
-  const lines = useRef<SVGLineElement[]>([]);
+const Trail = observer(({ points }: { points: Point[] }) => {
+  const d = getSvgPathFromStroke(
+    getStroke(
+      points.map(({ x, y }) => [x, y]),
+      {
+        size: TRAIL_SIZE,
+        streamline: 0.25,
+        start: { taper: true },
+        simulatePressure: false,
+      },
+    ),
+  );
+
+  return <path className="trail-fill" d={d} />;
+});
+
+const CustomCursor: React.FC = () => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const model = useLocalObservable(() => ({
+    points: [] as Point[],
+    addPoint(x: number, y: number) {
+      this.points.push({ x, y });
+    },
+    shrinkTrail() {
+      const len = this.points.length;
+      if (len > 1) {
+        this.points.splice(0, Math.ceil(len * SHRINK_RATE));
+      } else {
+        this.points.length = 0;
+      }
+    },
+  }));
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+    const handleMouseMove = (event: MouseEvent) => {
+      model.addPoint(event.clientX, event.clientY);
+      setPosition({ x: event.clientX, y: event.clientY });
     };
 
-    const handlePointerEnter = () => {
-      setCurrSize(enlargedSize);
-    };
+    const shrinkInterval = setInterval(() => {
+      model.shrinkTrail();
+    }, 32);
 
-    const handlePointerLeave = () => {
-      setCurrSize(defaultSize);
-    };
-
-    window.addEventListener("pointermove", handleMouseMove);
-
-    // Select all text elements
-    const textElements = document.querySelectorAll(
-      "p, span, a, h1, h2, h3, h4, h5, h6, li",
-    );
-    textElements.forEach((element) => {
-      element.addEventListener("pointerenter", handlePointerEnter);
-      element.addEventListener("pointerleave", handlePointerLeave);
-    });
+    document.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener("pointermove", handleMouseMove);
-      textElements.forEach((element) => {
-        element.removeEventListener("pointerenter", handlePointerEnter);
-        element.removeEventListener("pointerleave", handlePointerLeave);
-      });
+      clearInterval(shrinkInterval);
+      document.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
-
-  useEffect(() => {
-    if (svgRef.current) {
-      const linesArray: SVGLineElement[] = [];
-
-      for (let i = 0; i < config.lines; i++) {
-        const line = document.createElementNS(SVGNS, "line");
-        line.setAttribute("stroke", "black");
-        svgRef.current.appendChild(line);
-        linesArray.push(line);
-      }
-
-      lines.current = linesArray;
-      animateLines();
-    }
-  }, [svgRef]);
-
-  useEffect(() => {
-    if (circleRef.current) {
-      circleRef.current.setAttribute("cx", String(position.x));
-      circleRef.current.setAttribute("cy", String(position.y));
-    }
-    animateLines();
-  }, [position]);
-
-  const animateLines = () => {
-    console.log("Animating lines");
-    lines.current.forEach((line) => {
-      gsap.set(line, { x: position.x, y: position.y });
-
-      gsap.to(line, {
-        duration: 1,
-        x: "+=1",
-        y: "+=1",
-        repeat: -1,
-        ease: "none",
-        modifiers: {
-          x: () => {
-            const posX = parseFloat(gsap.getProperty(line, "x").toString());
-            const leaderX = position.x;
-            const x = posX + (leaderX - posX) * _ease;
-            line.setAttribute("x2", String(leaderX - x));
-            return String(x);
-          },
-          y: () => {
-            const posY = parseFloat(gsap.getProperty(line, "y").toString());
-            const leaderY = position.y;
-            const y = posY + (leaderY - posY) * _ease;
-            line.setAttribute("y2", String(leaderY - y));
-            return String(y);
-          },
-        },
-      });
-    });
-  };
-
+  }, [model]);
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" ref={svgRef} className="cursor-svg">
-      <circle fill="black" r={currSize} ref={circleRef} />
-    </svg>
+    <div>
+      <svg className="cursor-svg">
+        <circle
+          cx={position.x}
+          cy={position.y}
+          r={TRAIL_SIZE / 2}
+          className="trail-fill"
+        />
+        <Trail points={model.points} />
+      </svg>
+    </div>
   );
 };
 
