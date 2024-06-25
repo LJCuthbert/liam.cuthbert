@@ -1,6 +1,6 @@
 import { useTheme } from "../../components/theme/ThemeContext.tsx";
 import { useInView } from "react-intersection-observer";
-import ProjectCard from "../../components/util/ProjectCard.tsx";
+import ProjectCard from "../../components/ProjectCard.tsx";
 import ConQuestDark from "../../assets/ConQuestDark.png";
 import ConQuestLight from "../../assets/ConQuestLight.png";
 import UCFK from "../../assets/UCFK.jpg";
